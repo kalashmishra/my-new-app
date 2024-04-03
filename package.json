@@ -1,21 +1,51 @@
 {
-  "name": "my-new-app",
+  "name": "Credmudra",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mui/icons-material": "^5.15.11",
+    "@mui/material": "^5.14.10",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.5.0",
+    "bowser": "^2.11.0",
+    "chart.js": "^4.4.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "echarts": "^5.4.3",
+    "echarts-for-react": "^3.0.2",
+    "formik": "^2.4.5",
+    "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
+    "number-to-words": "^1.2.4",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-otp-input": "^3.1.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "styled-components": "^5.3.11",
+    "swiper": "^5.4.5",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ssr:start:build-server": "webpack --config webpack.server.js -w",
+    "ssr:start:run": "nodemon ./.ssr-server-cache/server.js ./.ssr-server-cache/service-worker.js",
+    "ssr:start": "npm-run-all --parallel build ssr:start:*",
+    "ssr:build:server": "webpack --config webpack.build.js",
+    "ssr:build": "npm-run-all build ssr:build:server",
+    "serve": "localhost  -p 8282",
+    "partytown": "partytown copylib public/~partytown"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +64,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "nodemon": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.66.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
   }
 }

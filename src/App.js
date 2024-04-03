@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{Suspense,lazy} from "react";
+import "./App.scss";
+import "../src/assets/Style/loader.css";
 
-function App() {
+
+const RouterComponent = lazy(() => import("./routes"));
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <Suspense  fallback={<div className="loader"></div>}>
+        <RouterComponent />
+      </Suspense>
+ 
   );
-}
+};
 
 export default App;
